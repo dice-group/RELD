@@ -10,7 +10,7 @@ The script can be used to generate the RDF of a single dataset individually or a
 ### Prerequisites
 The required packages for running the script will be installed by running the following command:
 ```
- pip install requirments.txt
+ pip install -r requirements.txt
 ```
 
 #### Single dataset conversion

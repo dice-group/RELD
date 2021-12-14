@@ -46,6 +46,8 @@ To convert all the datasets at once, you need to run the following command:
 ```
  python main.py 
 ```
+<hr>
+
 ### Datasets used
 
 | *Dataset*   | *Download*  |
@@ -57,10 +59,12 @@ To convert all the datasets at once, you need to run the following command:
 |FewRel|[Download](https://www.zhuhao.me/fewrel/)|
 |NYT-FB|[Download](http://iesl.cs.umass.edu/riedel/ecml/)|
 
-
+<hr>
 
 ### Overview of RELD Framework
 ![RELD Model Overview](images/Model.svg)
+
+<hr>
 
 ### Authors
   * [Manzoor Ali](https://dice-research.org/ManzoorAli) (DICE, Paderborn University) 

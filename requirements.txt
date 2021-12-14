@@ -1,0 +1,9 @@
+nltk>==3.4.1
+numpy>=1.16.3
+pandas>=1.0.3
+rdflib
+dateutil
+SPARQLWrapper
+spacy
+xmltodict
+urllib

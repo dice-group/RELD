@@ -1,4 +1,4 @@
-# RELD:A Knowledge Graph of Relation Extraction Datasets
+# RELD: A Knowledge Graph of Relation Extraction Datasets
 RDFizing relation extraction datasets and benchmarking relations and sentences.
 
 ## Documentation

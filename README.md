@@ -47,7 +47,7 @@ To convert all the datasets at once, you need to run the following command:
  python main.py 
 ```
 ### Overview of RELD Framework
-![LSQ Process Overview](images/model.eps "")
+![RELD Model Overview](images/Model.svg)
 
 
 ## License

@@ -46,9 +46,27 @@ To convert all the datasets at once, you need to run the following command:
 ```
  python main.py 
 ```
+## Dataset used
+
+| *Dataset*   | *Download*  |
+|-------------|-----------|
+|Wikipedia_Wikidata|[Download](https://www.informatik.tu-darmstadt.de/ukp/research_6/data/lexical_resources/wikipedia_wikidata_relations/)|
+|SemEval 2010 Task 8|[Download](http://www.kozareva.com/downloads.html)|
+|WEBNLG|[Download](https://webnlg-challenge.loria.fr/)|
+|Google RE|[Download](https://github.com/google-research-datasets/relation-extraction-corpus)|
+|FewRel|[Download](https://www.zhuhao.me/fewrel/)|
+|NYT-FB|[Download](http://iesl.cs.umass.edu/riedel/ecml/)|
+
+
+
 ### Overview of RELD Framework
 ![RELD Model Overview](images/Model.svg)
 
+### Authors
+  * [Manzoor Ali](https://dice-research.org/ManzoorAli) (DICE, Paderborn University) 
+  * [Muhammad Saleem](https://sites.google.com/site/saleemsweb/) (AKSW, University of Leipzig) 
+  * [Axel-Cyrille Ngonga Ngomo](https://dice-research.org/AxelCyrilleNgongaNgomo) (DICE, Paderborn University)
 
 ## License
 The source code of this repo is published under the [Apache License Version 2.0].
+

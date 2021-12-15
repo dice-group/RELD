@@ -60,16 +60,17 @@ To convert all the datasets at once, you need to run the following command:
 |NYT-FB|[Download](http://iesl.cs.umass.edu/riedel/ecml/)|
 
 <hr>
+### Dumps
+The generated dumps in compressed form are available online [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/)
+
+<hr>
 
 ### Overview of RELD Framework
 ![RELD Model Overview](images/Model.svg)
 
 <hr>
 
-### Dumps
-The generated dumps in compressed form are available online [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/)
 
-<hr>
 
 ### Authors
   * [Manzoor Ali](https://dice-research.org/ManzoorAli) (DICE, Paderborn University) 

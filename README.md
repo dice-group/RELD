@@ -66,6 +66,11 @@ To convert all the datasets at once, you need to run the following command:
 
 <hr>
 
+### Dumps
+The generated dumps in compressed form are available online [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/)
+
+<hr>
+
 ### Authors
   * [Manzoor Ali](https://dice-research.org/ManzoorAli) (DICE, Paderborn University) 
   * [Muhammad Saleem](https://sites.google.com/site/saleemsweb/) (AKSW, University of Leipzig) 

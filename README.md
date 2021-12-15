@@ -60,6 +60,7 @@ To convert all the datasets at once, you need to run the following command:
 |NYT-FB|[Download](http://iesl.cs.umass.edu/riedel/ecml/)|
 
 <hr>
+
 ### Dumps
 The generated dumps in compressed form are available online [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/)
 

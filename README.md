@@ -75,6 +75,11 @@ The dumps are also available in JSON-LD format for non-semantic web community [h
 
 The endpoint for RELD will be live [soon](http://sparql.cs.uni-paderborn.de:8890/sparql)
 
+<hr>
+
+### Coming soon updates
+
+Integrating DocRed dataset to RELD. 
 
 
 ### Overview of RELD Framework
@@ -82,7 +87,45 @@ The endpoint for RELD will be live [soon](http://sparql.cs.uni-paderborn.de:8890
 
 <hr>
 
+## RELD Example SPARQL Queries
 
+Following are two example SPARQL queries on RELD dataset:
+
+#### Q1: 
+
+Selecting 40 relations based on some filter criteria
+
+```
+PREFIX reldv : < https :// reld . dice - research . org / schema / >
+SELECT ? rId
+WHERE
+{
+? rId reldv : hasSentence ? sent .
+? sent reldv : numOfTokens ? nT .
+? sent reldv : numBetToken ? tB .
+FILTER (? nT < 25 && ? tB > 5 )
+}
+LIMIT 40
+  
+```
+
+#### Q2: 
+
+Selecting distinct relations based on number of sentences grouping 
+
+```
+Prefix reld : < https :// reld . dice - research . org / schema / >
+SELECT
+DISTINCT ? rId
+( AVG (? nToken ) as ? avgToken ) ( count (? ne ) as ? avgNE )
+{
+? rId reld : hasSentence ? sentence .
+? sentence reld : numOfTokens ? nToken .
+? sentence reld : hasN amedEn tity ? ne .
+}
+Group by ? rId having ( count (? sentence ) = 700)
+  
+```
 
 ### Authors
   * [Manzoor Ali](https://dice-research.org/ManzoorAli) (DICE, Paderborn University) 
@@ -90,5 +133,5 @@ The endpoint for RELD will be live [soon](http://sparql.cs.uni-paderborn.de:8890
   * [Axel-Cyrille Ngonga Ngomo](https://dice-research.org/AxelCyrilleNgongaNgomo) (DICE, Paderborn University)
 
 ## License
-The source code of this repo is published under the [Apache License Version 2.0].
+The source code of this repo is published under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
 

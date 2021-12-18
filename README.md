@@ -62,7 +62,8 @@ To convert all the datasets at once, you need to run the following command:
 <hr>
 
 ### Dumps
-The generated dumps in compressed form are available online [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/)
+The generated dumps in .ttl format are available online [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/ttl_dumps/)
+The dumps are also available in JSON-LD format for non-semantic web community [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/json_dumps/)
 
 <hr>
 

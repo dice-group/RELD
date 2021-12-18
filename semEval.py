@@ -117,7 +117,7 @@ def structured_data(path):
 
 
 
-def create_rdf(output,dsName):
+def create_rdf(output,dsName,subject_dict,object_dict):
     sent_counter = 0
     relation = ""
     ne_counter = 0
@@ -214,48 +214,50 @@ def create_rdf(output,dsName):
                    Literal(val[3],datatype=XSD.integer) 
                    )) 
             subject_string = returnValue(subject_dict,val[0])
+            sub_id = res+'sub_'+dsName+str(val[0])
             g.add((URIRef(sent_id),
                    URIRef(prop+'hasSubject'), 
-                   URIRef(res+'subject_'+str(val[0])) 
+                   URIRef(sub_id) 
                    ))
             if containsNumber(str(subject_string)):
-                g.add((URIRef(res+'subject_'+str(val[0])),
+                g.add((URIRef(sub_id),
                        RDFS.label, 
                        Literal(subject_string,datatype=XSD.string) 
                        ))
           
             
             elif check_type(str(subject_string)):
-                g.add((URIRef(res+'subject_'+str(val[0])),
+                g.add((URIRef(sub_id),
                        RDFS.label, 
                        Literal(subject_string,datatype=XSD.string))) 
                 
             else:
-                g.add((URIRef(res+'subject_'+str(val[0])),
-                       URIRef(prop+'subject'), 
-                       URIRef(res+ remove_alphaNumeric(subject_string))))
-            object_string = returnValue(object_dict,val[1])#remove_alphaNumeric(val[1]) 
+                g.add((URIRef(sub_id),
+                       RDFS.label, 
+                       Literal(remove_alphaNumeric(subject_string),datatype=XSD.string)))
+            object_string = returnValue(object_dict,val[1])#remove_alphaNumeric(val[1])
+            obj_id = res + 'obj_'+dsName+str(val[1])
             g.add((URIRef(sent_id),
                    URIRef(prop+'hasObject'), 
-                   URIRef(res+'object_'+str(val[1])) 
+                   URIRef(obj_id) 
                    ))
             if containsNumber(str(object_string)):
-                g.add((URIRef(res+'object_'+str(val[1])),
+                g.add((URIRef(obj_id),
                        RDFS.label, 
                        Literal(object_string,datatype=XSD.string) # debatable because the entities might be same
                        ))
             
             elif check_type(str(object_string)):
-                g.add((URIRef(res+'object_'+str(val[1])),
+                g.add((URIRef(obj_id),
                     RDFS.label, 
                     Literal(object_string,datatype=XSD.string) 
                     ))
             else:
-                g.add((URIRef(res+'object_'+str(val[1])),
-                       URIRef(prop+'object'), 
-                       URIRef(res+ remove_alphaNumeric(object_string)) # debatable because the entities might be same
+                g.add((URIRef(obj_id),
+                       RDFS.label, 
+                       Literal(remove_alphaNumeric(object_string),datatype=XSD.string) # debatable because the entities might be same
                        ))
-    g.serialize(destination="output/SemEval/SemEval_231121_final.ttl", format='ttl')
+    g.serialize(destination="output/SemEval/SemEval_171221_final.ttl", format='ttl')
     print(f"finished with sentence length = {sent_counter} and NE length = {ne_counter}")
     
 
@@ -263,7 +265,7 @@ def main():
    dataset_Name = "SemEval" 
    structured_data(path)
    print("The output = "+str(len(output)))
-   create_rdf(output,dataset_Name)
+   create_rdf(output,dataset_Name,subject_dict,object_dict)
 
 if __name__ == "__main__":
     main()

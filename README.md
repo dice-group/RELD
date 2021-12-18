@@ -61,11 +61,21 @@ To convert all the datasets at once, you need to run the following command:
 
 <hr>
 
-### Dumps
+## Sustainability
+
+### Static dumps
+
 The generated dumps in .ttl format are available online [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/ttl_dumps/)
+
 The dumps are also available in JSON-LD format for non-semantic web community [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/json_dumps/)
 
 <hr>
+
+### SPARQL Endpoint
+
+The endpoint for RELD will be live [soon](http://sparql.cs.uni-paderborn.de:8890/sparql)
+
+
 
 ### Overview of RELD Framework
 ![RELD Model Overview](images/Model.svg)

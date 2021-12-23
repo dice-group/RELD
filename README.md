@@ -77,6 +77,24 @@ The endpoint for RELD is live [here](http://reld:8890/sparql)
 
 <hr>
 
+### Local Virtuoso Endpoint
+
+A linux based local Virtuoso endpoint is avaliable [here](https://hobbitdata.informatik.uni-leipzig.de/RELD/endpoint/) that is easily configurable.
+
+#### Setup local endpoint
+
+Download the local Virtuoso from from the above mentioned link and unzip it; then run the following commands to setup a local instance:
+
+```
+cd bin
+sh start_virtuoso.sh
+
+```
+After running the above commands the local instance will be availble on http://localhost:8890/sparql
+
+
+<hr>
+
 ### Coming soon updates
 
 Integrating DocRed dataset to RELD. 
@@ -96,7 +114,7 @@ Following are two example SPARQL queries on RELD dataset:
 Selecting 40 relations based on some filter criteria
 
 ```
-PREFIX reldv : < https :// reld . dice - research . org / schema / >
+PREFIX reldv : <https://reld.dice-research.org/schema/>
 SELECT ? rId
 WHERE
 {
@@ -114,16 +132,29 @@ LIMIT 40
 Selecting distinct relations based on number of sentences grouping 
 
 ```
-Prefix reld : < https :// reld . dice - research . org / schema / >
+PREFIX reldv : <https://reld.dice-research.org/schema/>
 SELECT
 DISTINCT ? rId
 ( AVG (? nToken ) as ? avgToken ) ( count (? ne ) as ? avgNE )
 {
-? rId reld : hasSentence ? sentence .
-? sentence reld : numOfTokens ? nToken .
-? sentence reld : hasN amedEn tity ? ne .
+? rId reldv : hasSentence ? sentence .
+? sentence reldv : numOfTokens ? nToken .
+? sentence reldv : hasN amedEn tity ? ne .
 }
 Group by ? rId having ( count (? sentence ) = 700)
+  
+```
+
+#### Q3: 
+
+To get distinct relations from an individual graph here is an example query for Wikipedia-Wikidata dataset 
+
+```
+SELECT  distinct ?relations 
+from <http://reld.dice-research.org/Wiki-RE> 
+where {
+  ?relations <https://reld.dice-research.org/schema/hasSentence> ?sent.
+  }
   
 ```
 

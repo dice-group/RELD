@@ -1,0 +1,98 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix reldr: <https://reld.dice-research.org/resource/> .
+@prefix : <#> .
+
+:RELD
+	rdf:type void:Dataset ;
+	foaf:homepage <https://dice-research.org/RELD> ;
+	dcterms:title "Knowledge Graph of Relation Extraction" ;
+	void:sparqlEndpoint <http://reld.cs.upb.de:8890/sparql>;
+	dcterms:contributor <https://dice-research.org> ;
+	dcterms:source <https://github.com/dice-group/RELD> ;
+	dcterms:modified "2021-11-23"^^xsd:date ; 
+	dcterms:publisher :Manzoor_Ali ;
+	dcterms:publisher :Muhammad_Saleem ; 					  
+	dcterms:publisher :Axel-Cyrille_Ngonga_Ngomo ;
+	dcterms:license <https://creativecommons.org/licenses/by-nc/3.0/> ;
+	void:feature <https://www.w3.org/ns/formats/data/Turtle> ;
+	void:fearure <https://www.w3.org/ns/formats/data/JSON-LD>;
+	void:triples 55305748 ;
+	void:vocabulary <https://reld.dice-research.org/resource/> ;
+	void:vocabulary <https://reld.dice-research.org/schema/> ;
+	void:vocabulary <http://purl.org/ontology/bibo/> ;
+	void:vocabulary <http://purl.org/net/nknouf/ns/bibtex#> ;
+	void:vocabulary <http://purl.org/dc/terms/> ;
+	void:vocabulary <http://xmlns.com/foaf/0.1/> ;
+	void:vocabulary <http://www.w3.org/2005/11/its/rdf#> ;
+	void:vocabulary <http://www.w3.org/ns/prov#> ;
+	void:vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+	void:vocabulary <http://www.w3.org/2000/01/rdf-schema#> ;
+	void:vocabulary <http://schema.org/> ;
+	void:vocabulary <http://www.w3.org/2006/vcard/ns#> ;
+	void:vocabulary <http://www.w3.org/XML/1998/namespace> ;
+	void:vocabulary <http://www.w3.org/2001/XMLSchema#> ;
+	void:vocabulary <https://data.linkeddatafragments.org/> ;
+	void:linkPredicate rdfs:seeAlso ;
+	void:linkPredicate rdfs:label ;
+	void:linkPredicate rdf:type ;
+	void:linkPredicate owl:equivalenProperty ;
+	void:linkPredicate owl:sameAs .
+
+reldr:Google_RE a void:Dataset; 
+	void:target <https://reld.dice-research.org/>; 
+	void:target <https://github.com/google-research-datasets/>; 
+	void:linkPredicate owl:sameAs; 
+	void:triples 685633 . 
+
+reldr:NYT-FB a void:Dataset; 
+	void:target <https://reld.dice-research.org/>; 
+	void:target <http://iesl.cs.umass.edu/riedel/ecml/>; 
+	void:linkPredicate owl:sameAs; 
+	void:triples 3119910 . 
+reldr:FewRel a void:Dataset; 
+	void:target <https://reld.dice-research.org/>; 
+	void:target <https://www.zhuhao.me/fewrel/>; 
+	void:linkPredicate owl:sameAs; 
+	void:triples 1288803 .
+reldr:SemEval a void:Dataset; 
+	void:target <https://reld.dice-research.org/>; 
+	void:target <http://www.kozareva.com/>; 
+	void:linkPredicate owl:sameAs; 
+	void:triples 188991 .
+
+reldr:WebNLG a void:Dataset; 
+	void:target <https://reld.dice-research.org/>; 
+	void:target <https://webnlg-challenge.loria.fr/>; 
+	void:linkPredicate owl:sameAs; 
+	void:triples 1863267 . 
+
+reldr:Wiki-REG a void:Dataset; 
+	void:target <https://reld.dice-research.org/>; 
+	void:target <https://www.informatik.tu-darmstadt.de/ukp/research_ukp/ukp_research_data_and_software/>; 
+	void:linkPredicate owl:sameAs; 
+	void:triples 41156660 . 
+		 
+:Manzoor_Ali a 
+	foaf:Person ;
+	rdfs:label "Manzoor Ali" ;
+	foaf:homepage <https://dice-research.org/ManzoorAli>; 
+	foaf:mbox <mailto:manzoor@mail.uni-paderborn.de> .
+
+
+:Muhammad_Saleem a 
+	foaf:Person ;
+	rdfs:label "Muhammad Saleem" ;
+	foaf:homepage <https://dice-research.org/MuhammadSaleem>; 
+	foaf:mbox <mailto:saleem@informatik.uni-leipzig.de> .
+
+:Axel-Cyrille_Ngonga_Ngomo a 
+	foaf:Person ;
+	rdfs:label "Axel-Cyrille Ngonga Ngomo" ;
+	foaf:homepage <https://dice-research.org/AxelCyrilleNgongaNgomo>; 
+	foaf:mbox <mailto:axel.ngonga@upb.de> .

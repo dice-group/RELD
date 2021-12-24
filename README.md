@@ -73,7 +73,7 @@ The dumps are also available in JSON-LD format for non-semantic web community [h
 
 ### SPARQL Endpoint
 
-The endpoint for RELD is live [here](http://reld:8890/sparql)
+The endpoint for RELD is live [here](http://reld.cs.upb.de:8890/sparql)
 
 <hr>
 

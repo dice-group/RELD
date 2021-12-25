@@ -10,7 +10,7 @@
 
 :RELD
 	rdf:type void:Dataset ;
-	foaf:homepage <https://dice-research.org/RELD> ;
+	foaf:homepage <https://manzoorali29.github.io/index.html> ;
 	dcterms:title "Knowledge Graph of Relation Extraction" ;
 	void:sparqlEndpoint <http://reld.cs.upb.de:8890/sparql>;
 	dcterms:contributor <https://dice-research.org> ;

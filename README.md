@@ -3,6 +3,7 @@ RDFizing relation extraction datasets and benchmarking relations and sentences.
 
 ## Documentation
 
+For the detail documentaion our sustainability plan and news about the new version are available on project [homepage](https://manzoorali29.github.io/index.html)
 
 ### Conversion to RDF
 

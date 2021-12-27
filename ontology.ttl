@@ -1,0 +1,223 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix bibtex: <http://purl.org/net/nknouf/ns/bibtex#> .
+@prefix reldv: <https://reld.dice-research.org/schema/> .
+@prefix reldr: <https://reld.dice-research.org/resource/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix sdo: <http://salt.semanticauthoring.org/ontologies/sdo#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://reld.dice-research.org/>
+
+reldv:
+  a owl:Ontology ;
+  dc11:description "An ontology for the relation extraction datasets for representing RE data in RDF"^^xsd:string ;
+  dc11:title "Relation Extraction Linkied Data"^^xsd:string .
+
+reldv:hasRelation
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "Each relation belongs to a specific dataset"^^xsd:string ;
+  rdfs:domain reldr:Dataset;
+  rdfs:label "hasRelation"^^xsd:string ;
+  rdfs:range rdfs:Resource. 
+
+reldv:hasSentence
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "has sentence connect a sentence with the relation"^^xsd:string ;
+  rdfs:domain reldv:relation;
+  rdfs:label "hasSentence"^^xsd:string ;
+  rdfs:range reldv:Dataset.
+  
+
+reldv:hasNamedEntity
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "this property links every named entity in a sentence to the named Entity"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "hasNamedEntity"^^xsd:string ;
+  rdfs:range reldv:Named_Entity. 
+
+reldv:hasText
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property contains the actual text of the sentence in plain text"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "hasText"^^xsd:string ;
+  rdfs:range 	rdfs:Literal.
+
+reldv:hasSubject
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "hasSubject property links the actual head entity mentioned by the dataset to the sentence"^^xsd:string ;
+  rdfs:domain reldv:Dataset;
+  rdfs:label "hasSubject"^^xsd:string ;
+  rdfs:range reldv:Sentence .
+
+reldv:hasObject
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "hasObject property links the actual tail entity mentioned by the dataset to the sentence"^^xsd:string ;
+  rdfs:domain reldv:Dataset;
+  rdfs:label "hasObject"^^xsd:string ;
+  rdfs:range reldv:Sentence.
+ 
+reldv:direction
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "direction property shows the postion of head and tail or subject and objec entities in sentence with boolean values of True and False"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "direction"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:numOfRelation
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "numOfRelation property shows the number of relations contain by a sentence"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "numOfRelation"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:numOfTokens
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents number of tokens in a sentence tokens may be a word or a puctuation mark"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "numOfTokens"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:numOfSubToken
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents number of tokens in a subject or head entity"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "numOfSubToken"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:numOfObjToken
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents number of tokens in a object or tail entity"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "numOfObjToken"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:subPos
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents the position of the head entity in a sentence"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "subPos"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:objPos
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents the position of the tail entity in a sentence"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "objPos"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:numOfPunctuations
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents the number of punctuations in a sentence"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "numOfPunctuations"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:numBefToken
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents the number of tokens before the subject entity. Subject entity based on direction property"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "numBefToken"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:numAftToken
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents the number of tokens after the Object entity. Object entity based on direction property"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "numAftToken"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+reldv:numBetToken
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represents the number of tokens between the two head and tail entities"^^xsd:string ;
+  rdfs:domain reldv:Sentence;
+  rdfs:label "numBetToken"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+rdfs:distribution
+  a rdf:Property;
+  rdfs:comment "This property is used for showing that a relation is coming from which distribution of the datasets it may be training, testing or validation."^^xsd:string ;
+  rdfs:domain reldv:Relation;
+  rdfs:label "distribution"^^xsd:string ;
+  rdfs:range rdfs:Literal.
+
+
+reldv:primaryTask
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represnets the primary taks of the dataset it may be natural language generation or relation extraction etc."^^xsd:string ;
+  rdfs:domain reldv:Dataset;
+  rdfs:label "primaryTask"^^xsd:string ;
+  rdfs:range rdfs:Resource.
+
+reldv:reType
+  rdfs:isDefinedBy reldv: ;
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:comment "This property represnets the type of relation extraction for which the datasets is used. it might be binary, ternary etc."^^xsd:string ;
+  rdfs:domain reldv:Dataset;
+  rdfs:label "reType"^^xsd:string ;
+  rdfs:range rdfs:Resource.
+
+reldv:Dataset
+  rdfs:isDefinedBy reldv: ;
+  a owl:Class, rdfs:Class ;
+  rdfs:comment "Dataset is the class representing the RE dataset"^^xsd:string ;
+  rdfs:label "Dataset"^^xsd:string.
+
+reldv:Relation
+  rdfs:isDefinedBy reldv: ;
+  a owl:Class, rdfs:Class ;
+  rdfs:comment "Relation class represent each labelled relation of a dataset"^^xsd:string ;
+  rdfs:label "Relation"^^xsd:string.
+
+reldv:Sentence
+  rdfs:isDefinedBy reldv: ;
+  a owl:Class, rdfs:Class ;
+  rdfs:comment "Represents Each sentence for relation"^^xsd:string ;
+  rdfs:label "Sentence"^^xsd:string .
+
+reldv:Subject
+  rdfs:isDefinedBy reldv: ;
+  a owl:Class, rdfs:Class ;
+  rdfs:comment "Contains all the subject or head entities"^^xsd:string ;
+  rdfs:label "Subject"^^xsd:string .
+
+reldv:Object
+  rdfs:isDefinedBy reldv: ;
+  a owl:Class, rdfs:Class ;
+  rdfs:comment "Contains all the objects or tail entities"^^xsd:string ;
+  rdfs:label "Object"^^xsd:string .
+
+reldv:NamedEntities
+  rdfs:isDefinedBy reldv: ;
+  a owl:Class, rdfs:Class ;
+  rdfs:comment "Contains all the Named entities in sentences"^^xsd:string ;
+  rdfs:label "NamedEntities"^^xsd:string ;
+
+

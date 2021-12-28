@@ -3,7 +3,7 @@ RDFizing relation extraction datasets and benchmarking relations and sentences.
 
 ## Documentation
 
-For the detail documentaion our sustainability plan and news about the new version are available on project [homepage](https://manzoorali29.github.io/index.html)
+The detail documentaion of RELD are available on our [homepage](https://manzoorali29.github.io/index.html)
 
 ### Conversion to RDF
 
@@ -62,7 +62,7 @@ To convert all the datasets at once, you need to run the following command:
 
 <hr>
 
-## Sustainability
+
 
 ### Static dumps
 
@@ -96,68 +96,6 @@ After running the above commands the local instance will be availble on http://l
 
 <hr>
 
-### Coming soon updates
-
-Integrating DocRed dataset to RELD. 
-
-
-### Overview of RELD Framework
-![RELD Model Overview](images/Model.svg)
-
-<hr>
-
-## RELD Example SPARQL Queries
-
-Following are two example SPARQL queries on RELD dataset:
-
-#### Q1: 
-
-Selecting 40 relations based on some filter criteria
-
-```
-PREFIX reldv : <https://reld.dice-research.org/schema/>
-SELECT ? rId
-WHERE
-{
-? rId reldv : hasSentence ? sent .
-? sent reldv : numOfTokens ? nT .
-? sent reldv : numBetToken ? tB .
-FILTER (? nT < 25 && ? tB > 5 )
-}
-LIMIT 40
-  
-```
-
-#### Q2: 
-
-Selecting distinct relations based on number of sentences grouping 
-
-```
-PREFIX reldv : <https://reld.dice-research.org/schema/>
-SELECT
-DISTINCT ? rId
-( AVG (? nToken ) as ? avgToken ) ( count (? ne ) as ? avgNE )
-{
-? rId reldv : hasSentence ? sentence .
-? sentence reldv : numOfTokens ? nToken .
-? sentence reldv : hasN amedEn tity ? ne .
-}
-Group by ? rId having ( count (? sentence ) = 700)
-  
-```
-
-#### Q3: 
-
-To get distinct relations from an individual graph here is an example query for Wikipedia-Wikidata dataset 
-
-```
-SELECT  distinct ?relations 
-from <http://reld.dice-research.org/Wiki-RE> 
-where {
-  ?relations <https://reld.dice-research.org/schema/hasSentence> ?sent.
-  }
-  
-```
 
 ### Authors
   * [Manzoor Ali](https://dice-research.org/ManzoorAli) (DICE, Paderborn University) 

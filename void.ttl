@@ -15,16 +15,18 @@
 	void:sparqlEndpoint <http://reld.cs.upb.de:8890/sparql>;
 	dcterms:contributor <https://dice-research.org> ;
 	dcterms:source <https://github.com/dice-group/RELD> ;
-	dcterms:modified "2021-11-23"^^xsd:date ; 
+	dcterms:modified "2022-11-03"^^xsd:date ;
 	dcterms:publisher :Manzoor_Ali ;
 	dcterms:publisher :Muhammad_Saleem ; 					  
+	dcterms:publisher :Diego_Moussallem ;
+	dcterms:publisher :Mohamed_Ahmed_Sherif ;
 	dcterms:publisher :Axel-Cyrille_Ngonga_Ngomo ;
 	dcterms:license <https://creativecommons.org/licenses/by-nc/3.0/> ;
 	void:feature <https://www.w3.org/ns/formats/data/Turtle> ;
 	void:fearure <https://www.w3.org/ns/formats/data/JSON-LD>;
 	void:triples 55305748 ;
-	void:vocabulary <https://reld.dice-research.org/resource/> ;
-	void:vocabulary <https://reld.dice-research.org/schema/> ;
+	void:vocabulary <http://reld.dice-research.org/resource/> ;
+	void:vocabulary <http://reld.dice-research.org/schema/> ;
 	void:vocabulary <http://purl.org/ontology/bibo/> ;
 	void:vocabulary <http://purl.org/net/nknouf/ns/bibtex#> ;
 	void:vocabulary <http://purl.org/dc/terms/> ;
@@ -72,11 +74,21 @@ reldr:WebNLG a void:Dataset;
 	void:linkPredicate owl:sameAs; 
 	void:triples 1863267 . 
 
-reldr:Wiki-REG a void:Dataset; 
+reldr:Wiki-RE a void:Dataset; 
 	void:target <https://reld.dice-research.org/>; 
 	void:target <https://www.informatik.tu-darmstadt.de/ukp/research_ukp/ukp_research_data_and_software/>; 
 	void:linkPredicate owl:sameAs; 
 	void:triples 41156660 . 
+
+reldr:docRed a void:Dataset; 
+	void:target <https://reld.dice-research.org/>; 
+	void:target <https://github.com/thunlp/DocRED>; 
+	void:linkPredicate owl:sameAs; 
+	void:triples 2487493 . 
+reldr:t-rex a void:Dataset; 
+	void:target <https://reld.dice-research.org/>; 
+	void:target <https://hadyelsahar.github.io/t-rex/downloads/>; 
+	void:linkPredicate owl:sameAs.
 		 
 :Manzoor_Ali a 
 	foaf:Person ;
@@ -90,6 +102,19 @@ reldr:Wiki-REG a void:Dataset;
 	rdfs:label "Muhammad Saleem" ;
 	foaf:homepage <https://dice-research.org/MuhammadSaleem>; 
 	foaf:mbox <mailto:saleem@informatik.uni-leipzig.de> .
+
+:Diego_Moussallem a 
+	foaf:Person ;
+	rdfs:label "Diego Moussallem" ;
+	foaf:homepage <https://dice-research.org/DiegoMoussallem>; 
+	foaf:mbox <mailto:diego.moussallem@uni-paderborn.de> .
+
+:Mohamed_Ahmed_Sherif a 
+	foaf:Person ;
+	rdfs:label "Mohamed Ahmed Sherif" ;
+	foaf:homepage <https://dice-research.org/MohamedAhmedSherif>; 
+	foaf:mbox <mailto:mohamed.sherif@upb.de> .
+
 
 :Axel-Cyrille_Ngonga_Ngomo a 
 	foaf:Person ;

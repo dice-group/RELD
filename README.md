@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7429677.svg)](https://doi.org/10.5281/zenodo.7429677)
+
 # RELD: A Knowledge Graph of Relation Extraction Datasets
 RDFizing relation extraction datasets and benchmarking relations and sentences.
 

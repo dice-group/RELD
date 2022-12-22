@@ -16,7 +16,7 @@ The required packages for running the script will be installed by running the fo
  pip install -r requirements.txt
 ```
 
-#### Single dataset conversion
+<!--  Single dataset conversion
 To convert a single dataset, you can run the individual script as follow:
 
 ```
@@ -40,16 +40,17 @@ To convert a single dataset, you can run the individual script as follow:
   
 ```
 The .ttl output will be saved in the respective folders inside the output folder
+-->
 
-<b>Note:</b> The datasets files must be in the respective folders inside the data folder, otherwise, you need to set the path variable inside each script. 
 
-#### Conversion at once for all six datasets
+#### Conversion at once for all datasets
 To convert all the datasets at once, you need to run the following command:
 
 ```
  python data_loader.py 
 ```
 <hr>
+<b>Note:</b> The datasets files must be in the respective folders inside the data folder, otherwise, you need to set the path variable inside each script. 
 
 ### Datasets used
 

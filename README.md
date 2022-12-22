@@ -47,7 +47,7 @@ The .ttl output will be saved in the respective folders inside the output folder
 To convert all the datasets at once, you need to run the following command:
 
 ```
- python main.py 
+ python data_loader.py 
 ```
 <hr>
 
@@ -61,6 +61,8 @@ To convert all the datasets at once, you need to run the following command:
 |Google RE|[Download](https://github.com/google-research-datasets/relation-extraction-corpus)|
 |FewRel|[Download](https://www.zhuhao.me/fewrel/)|
 |NYT-FB|[Download](http://iesl.cs.umass.edu/riedel/ecml/)|
+|DocRed|[Download](https://github.com/thunlp/DocRED)|
+|T-REx|[Download](https://hadyelsahar.github.io/t-rex/)|
 
 <hr>
 
@@ -102,8 +104,8 @@ After running the above commands the local instance will be availble on http://l
 ### Authors
   * [Manzoor Ali](https://dice-research.org/ManzoorAli) (DICE, Paderborn University) 
   * [Muhammad Saleem](https://sites.google.com/site/saleemsweb/) (DICE, Paderborn University) 
-  * [Diego Moussallem](https://dice-research.org/DiegoMoussallem)(DICE, Paderborn University)
-  * [Mohamed Ahmed Sherif](https://dice-research.org/MohamedAhmedSherif)(DICE, Paderborn University)
+  * [Diego Moussallem](https://dice-research.org/DiegoMoussallem) (DICE, Paderborn University)
+  * [Mohamed Ahmed Sherif](https://dice-research.org/MohamedAhmedSherif) (DICE, Paderborn University)
   * [Axel-Cyrille Ngonga Ngomo](https://dice-research.org/AxelCyrilleNgongaNgomo) (DICE, Paderborn University)
 
 ## License

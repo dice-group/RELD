@@ -101,7 +101,9 @@ After running the above commands the local instance will be availble on http://l
 
 ### Authors
   * [Manzoor Ali](https://dice-research.org/ManzoorAli) (DICE, Paderborn University) 
-  * [Muhammad Saleem](https://sites.google.com/site/saleemsweb/) (AKSW, University of Leipzig) 
+  * [Muhammad Saleem](https://sites.google.com/site/saleemsweb/) (DICE, Paderborn University) 
+  * [Diego Moussallem](https://dice-research.org/DiegoMoussallem)(DICE, Paderborn University)
+  * [Mohamed Ahmed Sherif](https://dice-research.org/MohamedAhmedSherif)(DICE, Paderborn University)
   * [Axel-Cyrille Ngonga Ngomo](https://dice-research.org/AxelCyrilleNgongaNgomo) (DICE, Paderborn University)
 
 ## License

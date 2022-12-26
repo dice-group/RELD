@@ -5,7 +5,7 @@ RDFizing relation extraction datasets and benchmarking relations and sentences.
 
 ## Documentation
 
-The detail documentaion of RELD are available on our [homepage](https://manzoorali29.github.io/index.html)
+The detail documentaion of RELD are available on our [homepage](https://reld-tutorial.readthedocs.io/en/latest/intro.html)
 
 ### Conversion to RDF
 

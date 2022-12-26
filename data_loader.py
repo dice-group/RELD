@@ -891,7 +891,7 @@ def trexRe(path,relation_data):
     
     
 def main():
-    list_dataset = ["DocRed"]#["WebNLG", "Google-RE", "NYT-FB", "FewRel", "SemEval2010" ,"Wiki-RE","Trex"]
+    list_dataset = ["WebNLG", "Google-RE", "NYT-FB", "FewRel", "SemEval2010" ,"Wiki-RE","Trex"]
     relation = pd.read_csv('data/AllRelationWithCrossCheck.csv')
     relation = relation.drop(['Wrid','Nrid','Wgrid','Frid','Srid','Grid','Drid'],axis=1)
     relation.fillna('-', inplace = True)

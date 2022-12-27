@@ -1,0 +1,480 @@
+@prefix : <http://reld.dice-research.org/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://reld.dice-research.org/schema/> .
+
+<http://reld.dice-research.org/schema/> rdf:type owl:Ontology ;
+                                         owl:versionIRI <http://reld.dice-research.org/schema#/0.0.2> ;
+                                         <http://purl.org/dc/elements/1.1/contributor> "Axel-Cyrille Ngonga Ngomo" ,
+                                                                                       "Muhammad Saleem" ;
+                                         <http://purl.org/dc/elements/1.1/creator> "Manzoor Ali" ;
+                                         <http://purl.org/dc/elements/1.1/description> """The RELD Core Scehma (http://reld.dice-research.org/schema#) provides classes and properties to describe the NLP sub task Relation Extraction. The schema models the relations, sentences, entities and related concepts. The schema represents the relation extraction in a standard manner where other relation extraction related datasets can easily maped to this schema. The schema is available on our webpage and we recommend the audience to visit our web page and explore our pre-print paper to further explore the schema.
+The main class in this ontology is reld:Relation, which is the class of all relations available in different RE based datasets.
+The data built using RELD schema its diagram all are available online. Apart from relation class RELD also maps sentences, subjects, objects, named entities and related properties.
+
+Feedback
+If you'd like to leave feedback, please open an issue on GitHub (https://github.com/dice-group/RELD) and read the README or write an email to the mailing list: given on the Github page.
+Versioning process is explained here: https://manzoorali29.github.io/#version
+Licence information is available here:https://manzoorali29.github.io/licence"""@en ;
+                                         <http://purl.org/dc/elements/1.1/publisher> "DICE, University Paderborn" ;
+                                         <http://purl.org/dc/elements/1.1/rights> "The schema is licensed under GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)" ;
+                                         <http://purl.org/dc/elements/1.1/title> "Relation Extraction Linked Data"@en ;
+                                         <http://purl.org/dc/terms/license> "https://www.gnu.org/licenses/gpl-3.0.en.html" ;
+                                         :preferredNamespacePrefix "http:reld.dice-research.org/schema#" ,
+                                                                   "reld" ;
+                                         <http://reld.dice-research.org/schema/ww.w3.org/2000/01/rdf-schema#isDefinedBy> "https://github.com/dice-group/RELD/blob/main/ontology.ttl" ;
+                                         <http://reld.dice-research.org/schema/ww.w3.org/2002/07/owl#versionInfo> "0.0.2" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://reld.dice-research.org/schema/preferredNamespacePrefix
+:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://reld.dice-research.org/schema/preferredNamespaceUri
+:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://reld.dice-research.org/schema/ww.w3.org/2000/01/rdf-schema#isDefinedBy
+<http://reld.dice-research.org/schema/ww.w3.org/2000/01/rdf-schema#isDefinedBy> rdf:type owl:AnnotationProperty .
+
+
+###  http://reld.dice-research.org/schema/ww.w3.org/2002/07/owl#versionInfo
+<http://reld.dice-research.org/schema/ww.w3.org/2002/07/owl#versionInfo> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#samAs
+owl:samAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://reld.dice-research.org/schema/hasNamedEntity
+:hasNamedEntity rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+                rdfs:range <http://www.w3.org/ns/prov#Entity> .
+
+
+###  http://reld.dice-research.org/schema/hasPOS
+:hasPOS rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+        rdfs:range :POS ;
+        rdfs:comment "Each String has a corresponding POS instance connected with this property."^^xsd:string .
+
+
+###  http://reld.dice-research.org/schema/hasPunctuation
+:hasPunctuation rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+                rdfs:range :Punctuation ;
+                rdfs:comment "Connects String with punctuation"^^xsd:string .
+
+
+###  http://reld.dice-research.org/schema/hasStatement
+:hasStatement rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+              rdfs:range rdf:Statement ;
+              rdfs:comment "Connect String with its annotated staments"^^xsd:string .
+
+
+###  http://schema.org/url
+<http://schema.org/url> rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :Dataset ;
+                        rdfs:comment "This property connect the origal uri of the dataset"^^xsd:string .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#object
+rdf:object rdf:type owl:ObjectProperty ;
+           owl:inverseOf rdf:subject ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain rdf:Statement ;
+           rdfs:range rdfs:Literal ,
+                      rdfs:Resource ;
+           rdfs:comment "Each statment has an object it may be a resource or a literal."^^xsd:string .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate
+rdf:predicate rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain rdf:Statement ;
+              rdfs:range rdf:Property ;
+              rdfs:comment "Each statemten is connected to a property which represent a relation using this property."^^xsd:string .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#subject
+rdf:subject rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain rdf:Statement ;
+            rdfs:range rdfs:Resource ;
+            rdfs:comment "Each statment has a resource subject."^^xsd:string .
+
+
+###  http://www.w3.org/2002/07/owl#equivalentProperty
+owl:equivalentProperty rdf:type owl:ObjectProperty ,
+                                owl:SymmetricProperty ;
+                       rdfs:domain rdf:Property ;
+                       rdfs:range rdf:Property ;
+                       rdfs:comment "It connect similar properties."^^xsd:string .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:ObjectProperty ;
+           rdfs:domain rdfs:Resource ,
+                       <http://www.w3.org/ns/prov#Entity> ;
+           rdfs:range rdfs:Resource .
+
+
+###  http://www.w3.org/ns/dx/prof/hasToken
+<http://www.w3.org/ns/dx/prof/hasToken> rdf:type owl:ObjectProperty ,
+                                                 owl:FunctionalProperty ;
+                                        rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+                                        rdfs:range :Token ;
+                                        rdfs:comment "Connects String with Token"^^xsd:string .
+
+
+###  http://www.w3.org/ns/prov#hadPrimarySource
+<http://www.w3.org/ns/prov#hadPrimarySource> rdf:type owl:ObjectProperty ,
+                                                      owl:FunctionalProperty ;
+                                             rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+                                             rdfs:range :Dataset ;
+                                             rdfs:comment "connect each instance of String to each orignal source dataset"^^xsd:string .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://dbpedia.org/ontology/knownFor
+<http://dbpedia.org/ontology/knownFor> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain :Dataset ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:comment "Shows the popularity of a dataset"^^xsd:string .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:DatatypeProperty ,
+                                                 owl:FunctionalProperty ;
+                                        rdfs:domain :Dataset ;
+                                        rdfs:range xsd:string ;
+                                        owl:propertyDisjointWith <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+
+###  http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain :Dataset ;
+                                    rdfs:range xsd:string ;
+                                    rdfs:comment "It shows the language of the dataset"^^xsd:string .
+
+
+###  http://purl.org/healthcarevocab/v1/datasetType
+<http://purl.org/healthcarevocab/v1/datasetType> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain :Dataset ;
+                                                 rdfs:range xsd:string ;
+                                                 owl:propertyDisjointWith :strType ;
+                                                 rdfs:comment "It could be sentence type, multi-langual document etc."^^xsd:string .
+
+
+###  http://purl.org/net/nknouf/ns/bibtex#hasTitle
+<http://purl.org/net/nknouf/ns/bibtex#hasTitle> rdf:type owl:DatatypeProperty ,
+                                                         owl:FunctionalProperty ;
+                                                rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "this property shwos a title for a document if any"^^xsd:string .
+
+
+###  http://reld.dice-research.org/schema/isGeneric
+:isGeneric rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain rdf:Property ;
+           rdfs:range xsd:boolean .
+
+
+###  http://reld.dice-research.org/schema/isNominal
+:isNominal rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain rdfs:Literal ,
+                       rdfs:Resource ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "shows tha a resource is nominal"^^xsd:string .
+
+
+###  http://reld.dice-research.org/schema/numSent
+:numSent rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "shows number of sentences in a document"^^xsd:string .
+
+
+###  http://reld.dice-research.org/schema/objEndIndex
+:objEndIndex rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain rdf:Statement ;
+             rdfs:range xsd:integer .
+
+
+###  http://reld.dice-research.org/schema/objStartIndex
+:objStartIndex rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain rdf:Statement ;
+               rdfs:range xsd:integer .
+
+
+###  http://reld.dice-research.org/schema/strType
+:strType rdf:type owl:DatatypeProperty ;
+         rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+         rdfs:range xsd:string ;
+         rdfs:comment "it shows that wether a String is a sentence or documnet"^^xsd:string .
+
+
+###  http://reld.dice-research.org/schema/subEndIndex
+:subEndIndex rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain rdf:Statement ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "shows the end index of subject"^^xsd:string .
+
+
+###  http://reld.dice-research.org/schema/subFollowObj
+:subFollowObj rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain rdf:Statement ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "shows that an object apears before than subject"^^xsd:string .
+
+
+###  http://reld.dice-research.org/schema/subStartIndex
+:subStartIndex rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain rdf:Statement ;
+               rdfs:range xsd:integer ;
+               rdfs:comment "shows the subject start index in the tokens"^^xsd:string .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:DatatypeProperty ;
+             rdfs:domain rdf:Statement ;
+             rdfs:range xsd:string .
+
+
+###  http://www.w3.org/ns/dcat#distribution
+<http://www.w3.org/ns/dcat#distribution> rdf:type owl:DatatypeProperty ,
+                                                  owl:FunctionalProperty ;
+                                         rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "shows the String distribution in the orignal dataset"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String
+<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> rdf:type owl:Class ;
+                                                                        rdfs:comment "This class exists in nif. It will maps all the sentences or documents of our project and will assign a unique identifier to each string."@en ;
+                                                                        rdfs:label "String"@en .
+
+
+###  http://reld.dice-research.org/schema/Dataset
+:Dataset rdf:type owl:Class .
+
+
+###  http://reld.dice-research.org/schema/POS
+:POS rdf:type owl:Class ;
+     rdfs:subClassOf rdf:Seq ;
+     owl:disjointWith :Token ;
+     rdfs:comment "The class represens all the parts of speach of each token."@en ;
+     rdfs:label "Parts of speach"@en .
+
+
+###  http://reld.dice-research.org/schema/Punctuation
+:Punctuation rdf:type owl:Class ;
+             rdfs:subClassOf rdf:Seq ;
+             rdfs:comment "Will contains punctuations in a String."@en ;
+             rdfs:label "Punctuation"@en .
+
+
+###  http://reld.dice-research.org/schema/Token
+:Token rdf:type owl:Class ;
+       rdfs:subClassOf rdf:Seq .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Property
+rdf:Property rdf:type owl:Class .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq
+rdf:Seq rdf:type owl:Class .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
+rdf:Statement rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Literal
+rdfs:Literal rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class ;
+                                   rdfs:comment "this class is als present in the provanance. It will maps all the entities presetn in a String."@en ;
+                                   rdfs:label "Entity"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://reld.dice-research.org/schema/Dataset
+:Dataset rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/NamedEntity
+:NamedEntity rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/Relation
+:Relation rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/Token
+:Token rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/distribution
+:distribution rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/dsType
+:dsType rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/hasNamedEntity
+:hasNamedEntity rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/hasObject
+:hasObject rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/hasOrigin
+:hasOrigin rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/hasString
+:hasString rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/hasSubject
+:hasSubject rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/hasToken
+:hasToken rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/isGeneric
+:isGeneric rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/language
+:language rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/match
+:match rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/name
+:name rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/naturalLanguageRepresentation
+:naturalLanguageRepresentation rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/numToken
+:numToken rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/objPosition
+:objPosition rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/relationType
+:relationType rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/subPosition
+:subPosition rdf:type owl:NamedIndividual .
+
+
+###  http://reld.dice-research.org/schema/http://reld.dice-research.org/schema/primaryTask
+<http://reld.dice-research.org/schema/http://reld.dice-research.org/schema/primaryTask> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/dc/elements/1.1/title> rdfs:comment "shows the title of the dataset"^^xsd:string .
+
+
+:Dataset rdfs:comment "This class maps RE datasets. It indicates the origin of a relation or sentences, It helps in backtracing a sentence or relation to orignal source dataset."@en .
+
+
+:Token rdfs:comment "Representa each token including punctuations."@en ;
+       rdfs:label "Token"@en .
+
+
+:hasNamedEntity rdfs:comment "This property connect entites with String"^^xsd:string .
+
+
+:isGeneric rdfs:comment "shows that a property is generic"^^xsd:string .
+
+
+rdfs:comment rdfs:comment "It shows extra information of the statment e.g. the meta data of the statement."^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

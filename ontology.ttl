@@ -17,8 +17,8 @@ The data built using RELD schema its diagram all are available online. Apart fro
 
 Feedback
 If you'd like to leave feedback, please open an issue on GitHub (https://github.com/dice-group/RELD) and read the README or write an email to the mailing list: given on the Github page.
-Versioning process is explained here: https://manzoorali29.github.io/#version
-Licence information is available here:https://manzoorali29.github.io/licence"""@en ;
+Versioning process is explained here: https://reld-tutorial.readthedocs.io/en/latest/availablity.html#version
+Licence information is available here: https://reld-tutorial.readthedocs.io/en/latest/availablity.html#license"""@en ;
                                          <http://purl.org/dc/elements/1.1/publisher> "DICE, University Paderborn" ;
                                          <http://purl.org/dc/elements/1.1/rights> "The schema is licensed under GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)" ;
                                          <http://purl.org/dc/elements/1.1/title> "Relation Extraction Linked Data"@en ;

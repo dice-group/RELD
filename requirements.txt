@@ -235,7 +235,6 @@ wasabi==0.10.1
 watchdog @ file:///home/conda/feedstock_root/build_artifacts/watchdog_1654901041099/work
 wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1600965781394/work
 webencodings==0.5.1
-Werkzeug==2.2.2
 whatthepatch @ file:///home/conda/feedstock_root/build_artifacts/whatthepatch_1657393321074/work
 wikipedia==1.4.0
 wrapt @ file:///home/conda/feedstock_root/build_artifacts/wrapt_1651495243689/work

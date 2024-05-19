@@ -1,5 +1,4 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7429677.svg)](https://doi.org/10.5281/zenodo.7429677)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/4?logo=Python&logoColor=yellow)
 ![Docs - GitHub.io](https://img.shields.io/static/v1?logo=github&style=flat&color=green&label=docs&message=RELD)
 # RELD: A Knowledge Graph of Relation Extraction Datasets
 RDFizing relation extraction datasets and benchmarking relations and sentences.

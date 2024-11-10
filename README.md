@@ -1,7 +1,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7429677.svg)](https://doi.org/10.5281/zenodo.7429677)
 ![Docs - GitHub.io](https://img.shields.io/static/v1?logo=github&style=flat&color=green&label=docs&message=RELD)
 
-![reld.png](https://github.com/dice-group/RELD/blob/main/Reld.png)
+
+<img src="https://github.com/dice-group/RELD/blob/main/Reld.png" alt="Logo Image" width="200"/>
 
 # RELD: A Knowledge Graph of Relation Extraction Datasets
 RDFizing relation extraction datasets and benchmarking relations and sentences.
